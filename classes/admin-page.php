@@ -12,7 +12,7 @@ class Admin_Page {
     add_action( 'admin_menu', array($this, 'admin_menu') );
     add_action( 'admin_init', array($this, 'admin_init') );
     if ($page == 'loginlogger') {
-      add_action( 'admin_enqueue_scripts', array($this, 'settings_page_style') );
+      add_action( 'admin_enqueue_scripts', array($this, 'admin_page_style') );
     }
   }
 
@@ -101,8 +101,8 @@ class Admin_Page {
     </div><?php
   }
   
-  // Settings page style
-  function settings_page_style() {
+  // Admin page style
+  function admin_page_style() {
     wp_enqueue_style( 'admin_css', plugins_url( 'assets/styles/admin-page.css', dirname(__FILE__) ), false );
     wp_enqueue_script ( 'admin_js', plugins_url( 'assets/scripts/admin-page.js', dirname(__FILE__) ), false );
   }
